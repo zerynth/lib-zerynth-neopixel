@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Neopixel LedStrips &mdash; Neopixel LEDs 0.3.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/viper.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Neopixel LEDs 0.3.0 documentation" href="index.html"/>
+        <link rel="prev" title="Neopixel LED Modules" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> Neopixel LEDs</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Neopixel LedStrips</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Neopixel LEDs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Neopixel LedStrips</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/ledstrips.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <span class="target" id="module-neopixel.ledstrips"></span><div class="section" id="neopixel-ledstrips">
+<h1>Neopixel LedStrips<a class="headerlink" href="#neopixel-ledstrips" title="Permalink to this headline">¶</a></h1>
+<p>This driver controls any Neopixel ledstrip or ring.</p>
+<dl class="function">
+<dt id="neopixel.ledstrips.add_color">
+<code class="descname">add_color</code><span class="sig-paren">(</span><em>r1</em>, <em>g1</em>, <em>b1</em>, <em>r2</em>, <em>g2</em>, <em>b2</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.add_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a tuple (r,g,b) where r=r1+r2, g=g1+g2, b=b1+b2. In case of overflow, components are capped to 255</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="neopixel.ledstrips.first_color">
+<code class="descname">first_color</code><span class="sig-paren">(</span><em>r1</em>, <em>g1</em>, <em>b1</em>, <em>r2</em>, <em>g2</em>, <em>b2</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.first_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always return (r1,g1,b1) unless all the components are zero. In that case it returns (r2,g2,b2)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="neopixel.ledstrips.second_color">
+<code class="descname">second_color</code><span class="sig-paren">(</span><em>r1</em>, <em>g1</em>, <em>b1</em>, <em>r2</em>, <em>g2</em>, <em>b2</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.second_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always return (r2,g2,b2) unless all the components are zero. In that case it returns (r1,g1,b1)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="neopixel.ledstrips.LedStrip">
+<em class="property">class </em><code class="descname">LedStrip</code><span class="sig-paren">(</span><em>pin</em>, <em>nleds</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.LedStrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class abstracts a ledstrip. It needs to know which <em>pin</em> the ledstrip is wired to and how many leds it is composed of (<em>nleds</em>).
+The <em>pin</em> is automatically set to the correct mode and initially set to zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.on">
+<code class="descname">on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.on" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn on the ledstrip, colouring each led with the configuration set with methods like <a class="reference internal" href="#neopixel.ledstrips.set" title="neopixel.ledstrips.set"><code class="xref py py-meth docutils literal"><span class="pre">set()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>n</em>, <em>r</em>, <em>g</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the <em>nth</em> led of the strip to the <em>r</em>, <em>g</em>, <em>b</em> color specified. The led will change color only after the next call to <a class="reference internal" href="#neopixel.ledstrips.on" title="neopixel.ledstrips.on"><code class="xref py py-meth docutils literal"><span class="pre">on()</span></code></a>.</p>
+<p>An equivalent and valid syntax is ledstrip[n]=(r,g,b).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.setall">
+<code class="descname">setall</code><span class="sig-paren">(</span><em>r</em>, <em>g</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.setall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all the leds of the strip to the <em>r</em>, <em>g</em>, <em>b</em> color specified. The led will change color only after the next call to <a class="reference internal" href="#neopixel.ledstrips.on" title="neopixel.ledstrips.on"><code class="xref py py-meth docutils literal"><span class="pre">on()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all the leds of the strip to off. The leds will turn off after the next call to <a class="reference internal" href="#neopixel.ledstrips.on" title="neopixel.ledstrips.on"><code class="xref py py-meth docutils literal"><span class="pre">on()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.lshift">
+<code class="descname">lshift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.lshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shifts to the left all the leds by one. The leds will change color only after the next call to <a class="reference internal" href="#neopixel.ledstrips.on" title="neopixel.ledstrips.on"><code class="xref py py-meth docutils literal"><span class="pre">on()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.rshift">
+<code class="descname">rshift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.rshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shifts to the right all the leds by one. The leds will change color only after the next call to <a class="reference internal" href="#neopixel.ledstrips.on" title="neopixel.ledstrips.on"><code class="xref py py-meth docutils literal"><span class="pre">on()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.brightness">
+<code class="descname">brightness</code><span class="sig-paren">(</span><em>brt</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.brightness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplies all the led color by <em>brt</em>, a float between 0 and 1. The leds will change color only after the next call to <a class="reference internal" href="#neopixel.ledstrips.on" title="neopixel.ledstrips.on"><code class="xref py py-meth docutils literal"><span class="pre">on()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neopixel.ledstrips.merge">
+<code class="descname">merge</code><span class="sig-paren">(</span><em>lstrip</em>, <em>fun=add_color</em><span class="sig-paren">)</span><a class="headerlink" href="#neopixel.ledstrips.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges <em>lstrip</em> with the current strip (<em>self</em>).
+The resulting colors are calculated by applying <em>fun</em> to every corresponding pair of leds in the ledstrips.</p>
+<p>The signature of fun must be <em>fun(r1,g1,b1,r2,b2,g2)</em> where r1,g1,b1 are the color components of the first strip
+and r2,g2,b2 are the color components of the second strip. The default <em>add_color</em> sums colors component by component.</p>
+<p>Merging strips is very useful for animations. Indeed one can build different layers on different strips, animate them
+separately and merge them in one single strip to be showed.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Neopixel LED Modules"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Viper Team.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
