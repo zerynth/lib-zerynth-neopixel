@@ -1,7 +1,7 @@
 {
-	"version":"0.3.0",
+	"version":"1.0.0",
 	"title":"Neopixel LEDs",
-	"copyright":"Viper Team",
+	"copyright":"Zerynth Team",
 	"files":[
 		["Ledstrips","ledstrips.py"]
 	]
